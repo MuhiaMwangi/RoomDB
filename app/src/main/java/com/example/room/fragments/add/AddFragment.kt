@@ -15,12 +15,17 @@ import com.example.room.data.User
 import com.example.room.data.UserViewModel
 import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*
+import kotlinx.coroutines.InternalCoroutinesApi
 
 
 class AddFragment : Fragment() {
 
+    @InternalCoroutinesApi
     private lateinit var mUserViewModel: UserViewModel
 
+
+
+    @OptIn(InternalCoroutinesApi::class)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,6 +44,7 @@ class AddFragment : Fragment() {
         return view
     }
 
+    @InternalCoroutinesApi
     private fun insertDataToDatabase() {
         val firstName = addFirstName_et.text.toString()
         val surname = addSurname_et.text.toString()

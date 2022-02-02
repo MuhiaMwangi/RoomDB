@@ -17,6 +17,7 @@ abstract  class UserDatabase: RoomDatabase() {
         @Volatile
         private var INSTANCE: UserDatabase ?= null
 
+        @InternalCoroutinesApi
         fun getDatabase(context: Context): UserDatabase {
             val userInstance = INSTANCE
 
