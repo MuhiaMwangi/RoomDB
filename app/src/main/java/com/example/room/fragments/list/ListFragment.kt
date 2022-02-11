@@ -40,6 +40,7 @@ class ListFragment : Fragment() {
             user -> adapter.setData(user)
         })
 
+
         view.floatingActionButton.setOnClickListener(){
             findNavController().navigate(R.id.action_listFragment_to_addFragment)
 
