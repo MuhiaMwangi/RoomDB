@@ -17,13 +17,13 @@ import kotlinx.coroutines.launch
 @InternalCoroutinesApi
 class UserViewModel(application:Application): AndroidViewModel(application)
 {
-  private val readAllData:LiveData<List<User>>
+    val readAllData:LiveData<List<User>>
   private val repository: UserRepository
 
   //init block is the first to be executed  when UserViewModel is called
 init {
     val userDao= UserDatabase.getDatabase(application).userDao()
-      //we are using our database to call its getDatabase met hod
+      //we are using our database to call its getDatabase method
       //we are then accessing our userDao-(The one that we associated to the UserDatabase-"abstract fun userDao")
     repository= UserRepository(userDao)
     readAllData= repository.readAllData
